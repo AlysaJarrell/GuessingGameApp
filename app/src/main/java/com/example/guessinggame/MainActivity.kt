@@ -33,24 +33,31 @@ class MainActivity : AppCompatActivity() {
         imageButtonDone.setOnClickListener {
 //          Turns the text we get from a string to an Int so we can compare the guess with the random number
             val guess: Int = editText.text.toString().toInt()
+//          Makes sure the input is valid, if it is over 100, display message and clear input
+            if (guess > 100){
+                textView.text = "$guess is over 100, the number is between 1 and 100; input a lower number"
+                editText.text.clear()
+            }
+            else {
 
 //            checks to see if guess was less than random number, prints message and clears guess
-            if (guess < random) {
-                textView.text = "$guess is too low, try again."
-                editText.text.clear()
-            }
+                if (guess < random) {
+                    textView.text = "$guess is too low, try again."
+                    editText.text.clear()
+                }
 
 //            checks to see if guess was greater than random number, prints message and clears guess
-            else if (guess > random) {
-                textView.text = "$guess is too high, try again."
-                editText.text.clear()
+                else if (guess > random) {
+                    textView.text = "$guess is too high, try again."
+                    editText.text.clear()
 
-            }
+                }
 //            guess and number would have been equal, prints message and clears guess
-            else{
-                textView.text = "You got it! the number was $random"
-                editText.text.clear()
+                else {
+                    textView.text = "You got it! the number was $random"
+                    editText.text.clear()
 
+                }
             }
         }
 //      when replay button is presses we reset the game
