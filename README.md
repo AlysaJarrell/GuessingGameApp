@@ -1,6 +1,6 @@
 # Overview
 
-This is a simple app to demonstrate my learning with android studio to developing a mobile app.
+This is a simple app to demonstrate my learning with android studio to develop a mobile app.
 
 
 This is a simple number guessing game. A random number between 1 and 100 is chosen, then the user types in a guess and selects the checkmark.
@@ -9,7 +9,7 @@ The user can also select a button on the left to reset or replay the game.
 
 
 
-[Demo Video](http://youtube.link.goes.here)
+[Demo Video](https://www.youtube.com/watch?v=bTBe19hLElw)
 
 # Development Environment
 
