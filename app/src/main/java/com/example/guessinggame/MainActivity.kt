@@ -27,33 +27,39 @@ class MainActivity : AppCompatActivity() {
         imageButtonReplay = findViewById(R.id.imageButtonReplay)
         imageButtonDone = findViewById(R.id.imageButtonDone)
 
+//        start game play
         textView.text = "Take a guess, (choose a number between 1 and 100)"
-
+//      when 'Done' button is clicked it will do the following
         imageButtonDone.setOnClickListener {
+//          Turns the text we get from a string to an Int so we can compare the guess with the random number
+            val guess: Int = editText.text.toString().toInt()
 
-            val number: Int = editText.text.toString().toInt()
-
-            if (number < random) {
-                textView.text = "That guess was too low, try again."
+//            checks to see if guess was less than random number, prints message and clears guess
+            if (guess < random) {
+                textView.text = "$guess is too low, try again."
                 editText.text.clear()
             }
-            else if (number > random) {
-                textView.text = "That guess was too high, try again."
+
+//            checks to see if guess was greater than random number, prints message and clears guess
+            else if (guess > random) {
+                textView.text = "$guess is too high, try again."
                 editText.text.clear()
 
             }
+//            guess and number would have been equal, prints message and clears guess
             else{
                 textView.text = "You got it! the number was $random"
                 editText.text.clear()
 
             }
         }
-
+//      when replay button is presses we reset the game
         imageButtonReplay.setOnClickListener {
             reset()
         }
 
     }
+//  creates the function reset(), prompts the same as the start and gets a new random number, clears any guess
     @SuppressLint("SetTextI18n")
     fun reset(){
         random = nextInt(1, 100)
